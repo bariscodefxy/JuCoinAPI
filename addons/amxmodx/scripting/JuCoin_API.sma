@@ -38,6 +38,11 @@ public client_putinserver(id)
 	set_task(2.0, "JuCoinAuto", id, _, _, "b")
 }
 
+public client_disconnected( id )
+{
+	remove_task( id );
+}
+
 public JuCoinAuto(id)
 {
 	JuCoinSave(id)
@@ -73,6 +78,8 @@ public plugin_cfg()
 
 JuCoinSave(id)
 {
+	if( is_user_connected( id ) ) return;
+
 	new szAuth[33];
 	new szKey[64];
 	
@@ -88,6 +95,8 @@ JuCoinSave(id)
 
 JuCoinLoad(id)
 {
+	if( is_user_connected( id ) ) return;
+
 	new szAuth[33];
 	new szKey[40];
 	
