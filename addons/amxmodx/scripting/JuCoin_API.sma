@@ -19,7 +19,7 @@
 #define MYSQL_NAME "JuCoinDB"
 
 new JuCoin[33]
-new JuTokens[33][64];
+new JuTokens[33][128];
 new Handle:g_SqlTuple
 new Handle:g_SqlConnection
 new g_SqlErrCode;
